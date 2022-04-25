@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "name": "water",
+      "price": 100
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "article_id": 1,
+          "quantity": 6
+        }
+      ]
+    }
+  ]
+}

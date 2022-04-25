@@ -1,0 +1,42 @@
+{
+  "name": "koober-ta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start:level1": "npm run build && npm run copyfiles && node dist/src/level1/index.js",
+    "test:integration:level1": "npm run start:level1 && diff dist/src/level1/output/output.json dist/src/level1/models/expected_output.json && echo Test passed",
+    "copyfiles": "npx copyfiles -u 1 src/level1/models/*.json dist/src",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest --coverage"
+  },
+  "author": "Mama",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.14.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "copyfiles": "^2.4.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "module-alias": "^2.2.2"
+  },
+  "_moduleAliases": {
+    "@level1": "dist/src/level1",
+    "@level2": "dist/src/level2"
+  }
+}

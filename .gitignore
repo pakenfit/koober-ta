@@ -1,0 +1,8 @@
+node_modules
+.env
+dist
+coverage
+src/level1/output
+src/level2/output
+src/level3/output
+.DS_Store
