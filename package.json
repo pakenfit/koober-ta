@@ -2,12 +2,14 @@
   "name": "koober-ta",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start:level1": "npm run build && npm run copyfiles && node dist/src/level1/index.js",
-    "test:integration:level1": "npm run start:level1 && diff dist/src/level1/output/output.json dist/src/level1/models/expected_output.json && echo Test passed",
-    "copyfiles": "npx copyfiles -u 1 src/level1/models/*.json dist/src",
+    "start:level1": "npm run build && npm run copyfiles:level1 && node dist/src/level1/index.js",
+    "start:level2": "npm run build && npm run copyfiles:level2 && node dist/src/level2/index.js",
+    "test:integration:level1": "npm run start:level1 && diff dist/src/level1/output/output.json dist/src/level1/models/expected_output.json && echo Level1 Test passed",
+    "test:integration:level2": "npm run start:level2 && diff dist/src/level2/output/output.json dist/src/level2/models/expected_output.json && echo Level2 Test passed",
+    "copyfiles:level1": "npx copyfiles -u 1 src/level1/models/*.json dist/src",
+    "copyfiles:level2": "npx copyfiles -u 1 src/level2/models/*.json dist/src",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest --coverage"
@@ -29,14 +31,12 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "body-parser": "^1.20.0",
     "copyfiles": "^2.4.1",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
     "module-alias": "^2.2.2"
   },
   "_moduleAliases": {
     "@level1": "dist/src/level1",
-    "@level2": "dist/src/level2"
+    "@level2": "dist/src/level2",
+    "@level3": "dist/src/level3"
   }
 }
