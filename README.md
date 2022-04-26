@@ -4,7 +4,7 @@ This **TA** intends to build an e-commerce website with different steps of featu
 
 ### Description
 
-# Level 1
+#### Level 1
 
 We are building an e-commerce website. Our customers can:
   - add articles to a virtual cart
@@ -15,11 +15,11 @@ The customer is charged the sum of the prices of each article in their cart.
 
 Prices are expressed in cents.
 
-# Level 2
+#### Level 2
 
 Cost of delivery depends on how much we charged the custormer for their cart’s contents
 The more the customer spends, the less they are charged for shipping.
-# Level 3
+#### Level 3
 
 Some products are discounted because of a deal we made with the supplier.
 
