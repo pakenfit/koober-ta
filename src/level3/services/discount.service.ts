@@ -13,7 +13,7 @@ export const getDiscountedPrice = (
   discount: number,
   articlePrice: number,
   type: DiscountType,
-) =>
+): number =>
   Math.floor(
     type === DiscountType.AMOUNT
       ? articlePrice - discount
@@ -29,5 +29,5 @@ export const getDiscountedPrice = (
 export const getArticleDiscount = (
   articleId: number,
   discounts: DiscountItem[],
-) =>
+): DiscountItem | undefined =>
   discounts.find((discount: DiscountItem) => discount.article_id === articleId);
